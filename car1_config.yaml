@@ -8,7 +8,7 @@ car1:
             #      string : Output topic to echo back received cmd msgs, default = 'control_output_topic'
                   cmd_bridge_output_topic: 'cmd/out'
             #     string: initial mode for the autonomy state machine      
-                  initial_mode: 'experiment'
+                  initial_mode: 'direct'
             #     string: MQTT topic for spring 2023 demo
                   demo_topic: '/car1/demo'
       steering_driver:
@@ -31,6 +31,8 @@ car1:
                   neighbor_list: ['car2', 'car3', 'signal1']
             #      double : frequency to report agent's own state, default = 1.0
                   report_frequency: 1.0
+            #      string: topic to receive agent's location message
+                  location_input: 'vive'
       ackermann_controller:
             ros__parameters:
             #      string : input topic for twist messages, default = 'ros_pub_top'
